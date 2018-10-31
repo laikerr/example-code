@@ -36,7 +36,7 @@ def slow_function():  # <5>
 
 @asyncio.coroutine
 def supervisor():  # <7>
-    spinner = asyncio.async(spin('thinking!'))  # <8>
+    spinner = asyncio.async(spin('thinking!'))  # <8>this line can't run need write like this (asyncio.async -->asyncio.Task)
     print('spinner object:', spinner)  # <9>
     result = yield from slow_function()  # <10>
     spinner.cancel()  # <11>
